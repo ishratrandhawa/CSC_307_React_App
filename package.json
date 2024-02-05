@@ -1,7 +1,6 @@
 {
-  "name": "csc-307-app",
+  "name": "backend.js",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +13,7 @@
   "dependencies": {
     "create-react-app": "^1.2.1",
     "react-scripts": "^5.0.1"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }

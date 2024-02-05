@@ -3,7 +3,7 @@ import React from "react";
 function TableHeader() {
   return (
     <thead>
-      
+
       <tr>
         <th>Namee</th>
         <th>Job</th>
