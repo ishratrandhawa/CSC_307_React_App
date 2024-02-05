@@ -111,43 +111,10 @@ app.get("/users/:id", (req, res) => {
 });
 
 app.delete("/users/:id", (req, res) => {
-    const id = req.params.id;
-    const deleted = deleteUserById(id);
-  
-    if (deleted) {
-      res.send(`User with ID ${id} has been deleted.`);
-    } else {
-      res.status(404).send("User not found.");
-    }
-  });
-  
+    const id = req.params["id"];
+    res.status(removeUserById(id) ? 204 : 404).send();
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-
-const deleteUserById = (id) => {
-    const index = users.users_list.findIndex((user) => user.id === id);
-    if (index !== -1) {
-      users.users_list.splice(index, 1);
-      return true; // Success
-    }
-    return false; // User not found
-  };
-
-  const findUsersByNameAndJob = (name, job) => {
-    return users.users_list.filter(
-      (user) => user.name === name && user.job === job
-    );
-  };
-
-  app.get("/users/search", (req, res) => {
-    const { name, job } = req.query;
-  
-    if (name && job) {
-      const result = findUsersByNameAndJob(name, job);
-      res.send({ users_list: result });
-    } else {
-      res.status(400).send("Please provide both name and job parameters.");
-    }
-  });
