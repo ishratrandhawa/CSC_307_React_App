@@ -4,17 +4,18 @@
     "description": "",
     "main": "backend.js",
     "scripts": {
-      "dev": "set DEBUG='express:router' && npx nodemon backend.js",
-      "start": "node backend.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "dev": "set DEBUG='express:router' && npx nodemon backend.js",
+        "start": "node backend.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
     "license": "ISC",
     "type": "module",
     "devDependencies": {
-      "nodemon": "^3.0.3"
+        "nodemon": "^3.0.3"
     },
     "dependencies": {
-      "cors": "^2.8.5"
+        "cors": "^2.8.5",
+        "mongoose": "^8.1.1"
     }
-  }
+}
